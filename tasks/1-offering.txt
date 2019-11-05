@@ -1,0 +1,28 @@
+
+Zad 1. Zaimplementuj negocjacje pożyczki pomiędzy uczestnikami:
+
+Inicjalna akcja może wyjść od dowolnego uczestnika:
+- Poproś o pożyczkę
+- Zaoferuj kwotę
+wskazując kwotę oraz drugiego uczestnika.
+
+Drugi uczestnik może przyjąć / potwierdzić transakcje lub odrzucić.
+
+Niezależnie od finału musi pozostać ślad po negocjacji.
+
+Scenariusze:
+1. Oferuje pieniądze koledze, on przyjmuje ofertę
+2. Oferuje pieniądze koledze, on odrzuca ofertę
+3. Oferuje pieniądze koledze, on nie reaguje
+4. Kolega pyta mnie o pożyczkę, przyjmuję ofertę
+5. Kolega pyta mnie o pożyczkę, odrzucam ofertę
+6. Kolega pyta mnie o pożyczkę, nie odpowiadam
+
+
+Postaraj się zaimplementować powyższą logikę obiektowo,
+to znaczy: obiekt enkapsuluje i mutuje swój stan, udostępniając zachowania.
+
+Stan wewnętrzny obiektu, parametry wejściowe / wyjściowe metod postaraj się reprezentować obiektami.
+
+W wypadku dokonania tranzakcji, z metody zwróć obiekt będący faktem dokonania tranzakcji,
+zawierającym wszystkie niezbędne informacje o tranzakcji.
