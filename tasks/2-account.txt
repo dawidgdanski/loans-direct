@@ -1,0 +1,14 @@
+
+Zad 2. Zaimplementuj konto rozliczeń pomiędzy uczestnikami
+
+Po udzieleniu pożyczki saldo konta ulega zmianie.
+
+Zwrot zadłużenia pomniejsza zadłużenie,
+Zwrot może być częściowy, całkowity, bądź z nadpłatą.
+W przypadku nadpłaty, zadłużenie obciąża stronę, która pierwotnie udzielała pożyczki.
+
+obiekt konta reaguje na:
+- fakt dokonania tranzakcji (z zadania pierwszego)
+- analogiczny fakt zwrotu pieniędzy
+
+w każdym momencie powinno być możliwe ustalenie kto, komu ile jest winny
