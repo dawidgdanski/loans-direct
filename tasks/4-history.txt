@@ -1,0 +1,13 @@
+
+Zad 4. Zaimplementuj read model
+
+Historia transakcji na pojedynczym koncie
+Przedstawia:
+- każdy element na liście ma opis (kto, ile, saldo, data, tytul operacji)
+
+tytuły operacji mają postać, np:
+- 01.11.2019 Maciek pożyczył od Ciebie kwotę 25 PLN, saldo po operacji 25 PLN
+- 02.11.2019 Maciek zwrócił Ci kwotę 20 PLN, saldo po operacji 5 PLN
+- 03.11.2019 Maciek pożyczył Ci kwotę 15 PLN, saldo po operacji -10 PLN
+- 04.11.2019 Maciek otrzymał od Ciebie kwotę 10 PLN, saldo po operacji 0 PLN
+
