@@ -14,6 +14,10 @@ public class Operation {
     TransactionDetails details;
     Liabilities balance;
 
+    public static Operation loan(TransactionDetails details, Balance balance) {
+        return new Operation(Kind.LOAN, details, balance.liabilities());
+    }
+
     public enum Kind {
         LOAN, RETURN
     }

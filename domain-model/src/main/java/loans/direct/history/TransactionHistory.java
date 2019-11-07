@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 @AllArgsConstructor
-public class TransactionHistory {
+class TransactionHistory {
 
     private final UserId user;
     private final String counterPartyName;

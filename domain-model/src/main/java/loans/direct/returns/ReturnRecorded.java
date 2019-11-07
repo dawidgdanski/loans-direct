@@ -1,6 +1,5 @@
 package loans.direct.returns;
 
-import loans.direct.ReturnId;
 import loans.direct.TransactionDetails;
 import lombok.Value;
 

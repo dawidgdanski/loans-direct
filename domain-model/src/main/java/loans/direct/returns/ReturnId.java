@@ -1,4 +1,4 @@
-package loans.direct;
+package loans.direct.returns;
 
 import lombok.Value;
 

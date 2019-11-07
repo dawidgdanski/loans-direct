@@ -6,10 +6,11 @@ import lombok.AllArgsConstructor;
 
 import java.time.Clock;
 import java.time.Instant;
+import java.util.List;
 
 @AllArgsConstructor
 class OfferNegotiation {
-    private final OfferId id;
+    final OfferId id;
     private final UserId user;
 
     private OfferCreated initiated;
@@ -17,11 +18,13 @@ class OfferNegotiation {
     private Rejected reject;
 
     private final Clock clock;
+    final List<Object> events;
 
     OfferCreated propose(UserId debtor, Money money) {
         offerNotInitiated();
         initiated = OfferCreated.byCreditorSide(id, Instant.now(clock))
                 .details(user, debtor, money);
+        events.add(initiated);
         return initiated;
     }
 
@@ -29,6 +32,7 @@ class OfferNegotiation {
         offerNotInitiated();
         initiated = OfferCreated.byDebitorSide(id, Instant.now(clock))
                 .details(creditor, user, money);
+        events.add(initiated);
         return initiated;
     }
 
@@ -39,6 +43,7 @@ class OfferNegotiation {
                 id,
                 initiated.getDetails(Instant.now(clock))
         );
+        events.add(transaction);
         return transaction;
     }
 
@@ -46,19 +51,20 @@ class OfferNegotiation {
         offerActive();
         respondedByCounterParty(rejecting);
         reject = new Rejected(id, rejecting, Instant.now(clock));
+        events.add(reject);
         return reject;
     }
 
     Rejected expire() {
         offerActive();
         reject = new Rejected(id, UserId.system(), Instant.now(clock));
+        events.add(reject);
         return reject;
     }
 
     private void offerNotInitiated() {
         if (initiated != null) throw new IllegalStateException();
     }
-
 
     private void offerActive() {
         if (initiated == null) throw new IllegalStateException();

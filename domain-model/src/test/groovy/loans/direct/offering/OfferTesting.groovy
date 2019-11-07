@@ -13,7 +13,10 @@ trait OfferTesting {
     Clock clock = Clock.fixed(Instant.now(), ZoneId.systemDefault())
 
     OfferNegotiation newOffer(UserId initiating) {
-        new OfferNegotiation(someOfferId(), initiating, null, null, null, clock)
+        new OfferNegotiation(someOfferId(), initiating,
+                null, null, null,
+                clock, new ArrayList<Object>()
+        )
     }
 
     OfferId someOfferId() {

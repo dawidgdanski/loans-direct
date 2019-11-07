@@ -15,12 +15,12 @@ public class Money {
         return ZERO;
     }
 
-    public Money add(Money operand) {
-        return Money.of(amount + operand.amount);
+    private Money(long amount) {
+        this.amount = amount;
     }
 
-    public Money reduce(Money other) {
-        return of(Math.max(amount - other.amount, 0));
+    public Money add(Money operand) {
+        return Money.of(amount + operand.amount);
     }
 
     public Money subtract(Money operand) {
